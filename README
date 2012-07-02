@@ -1,0 +1,61 @@
+
+Code Igniter Form token library avoids sending two times a forms when a user reloads a page.
+
+
+
+Controller example:
+
+class Test extends CI_Controller
+{
+	
+    public function create()
+    {
+
+        if ($this->form_token->check() && $this->input->post('submit'))
+        {
+        	// Cool stuff
+        }	
+        
+        $this->load->view('test')
+
+	}
+
+}
+
+
+
+
+And inside the test.php view:
+
+<form action="create" >
+
+	<!-- here are some form inputs -->
+
+	<?php echo $this->form_token->render(); ?>
+	
+	<input type="submit" name="submit" value="Create" />
+
+</form>
+
+
+
+
+Use restore() for ajax calls to avoid token regeneration:
+
+class Test extends CI_Controller
+{
+	
+    public function json_data()
+    {
+    	
+    	$this->form_token->restore();
+    	
+    	// Then send json to output for the ajax call
+    
+    }
+    
+}
+
+
+
+
