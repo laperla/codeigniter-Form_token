@@ -5,10 +5,10 @@
  * Form token library. Avoids sending two times a forms when a user reloads a page.
  *
  * @author      Miguel Ayllón
- * @package     Form
+ * @package     Form_token
  * @category    Libraries
- * @version     1.0.0
- * @url         https://github.com/laperla/Form_token 
+ * @version     1.0.1
+ * @url         https://github.com/laperla/codeigniter-Form_token 
  */
 class Form_token
 {
